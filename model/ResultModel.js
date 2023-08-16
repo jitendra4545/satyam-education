@@ -30,7 +30,7 @@ const ResultSchema = mongoose.Schema({
     mark7: { type: Number },
     sub8: { type: String },
     mark8: { type: Number },
-    QRCODE:{type:String}
+    myqr:{type:String}
 
 }, {
     versionKey: false,

@@ -74,6 +74,7 @@ const saveData=ResultModel({
     sub6:req.body.sub6,mark6:req.body.mark6,
     sub7:req.body.sub7,mark7:req.body.mark7,
     sub8:req.body.sub8,mark8:req.body.mark8,
+    myqr:req.body.myqr,
 image:{
     data:fs.readFileSync('uploads/'+req.file.filename),
     contentType:"image/png"
