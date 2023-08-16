@@ -28,7 +28,7 @@ try{
     await newAdmin.save()
     res.send("Signup Successfull")
 }catch(err){
-console.log(err)
+res.send(err)
 }
 
 })
@@ -49,7 +49,7 @@ app.post("/login",async(req,res)=>{
        }
        res.send(AllData)
      }catch(err){
-console.log(err)
+res.send(err)
      }
 })
 
