@@ -5,7 +5,7 @@ const { default: mongoose } = require("mongoose");
 
 const ResultSchema = mongoose.Schema({
     image: {data:Buffer,contentType:String },
-    image1: {data:Buffer,contentType:String },
+   
     session: { type: String },
     roll_no: { type: String },
     student_name: { type: String },

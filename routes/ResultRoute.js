@@ -21,26 +21,6 @@ const storage = multer.diskStorage({
 
 
 
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, `${__dirname}/uploads`);
-//     },
-//     filename: function (req, file, cb) {
-//       const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-//       cb(null, file.fieldname + "-" + uniqueSuffix+'.jpg' );
-//     },
-//   });
-//   const upload = multer({ storage });
-
-
-//   var accessLogStream = fs.createWriteStream(path.join(__dirname, 'logs'), { flags: 'a' })  
-//   app.use(morgan('combined',{stream:accessLogStream}))  // logger middleware 
-
-
-//   ResultRouter.post("/upload",upload.single("avatar"),(req,res)=>{
-//     console.log(req.file);
-//     res.send("File uploaded")
-// })
 
 ResultRouter.get("/", async(req, res) => {
     try{
@@ -51,11 +31,21 @@ ResultRouter.get("/", async(req, res) => {
     }
 })
 
-ResultRouter.post("/add",upload.array("testimage",2), async (req, res) => {
+ResultRouter.post("/add",upload.single("testimage"), async (req, res) => {
     // const {image,session,roll_no,student_name,fathers_name,mothers_name
     //     ,date_of_birth,gender,admission_in_class,course_name,
     //     sub1,mark1,sub2,mark2,sub3,mark3,sub4,mark4,sub5,mark5,sub6,mark6,sub7,mark7,sub8,mark8}= req.body
     // const { filename, path } = req.file;
+    // console.log(req.file.filename)
+
+    // const images = req.files.map((file) => ({
+    //     data:fs.readFileSync('uploads/'+file.filename),
+    //      contentType:"image/png"
+    //   }));
+
+    
+
+
 const saveData=ResultModel({
     session:req.body.session,
     roll_no:req.body.roll_no,
@@ -78,12 +68,19 @@ const saveData=ResultModel({
 image:{
     data:fs.readFileSync('uploads/'+req.file.filename),
     contentType:"image/png"
+ 
 },
-image1:{
-    data:fs.readFileSync('uploads/'+req.file.filename),
-    contentType:"image/png"
-}
+
+//     data:fs.readFileSync('uploads/'+req.file.filename),
+// contentType:"image/png"
+
+
+    
+
 })
+
+
+
 try {
         
         await saveData.save()
