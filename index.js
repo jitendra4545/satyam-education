@@ -15,7 +15,7 @@ const { ImageModel } = require('./model/TestModel')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors())
-app.use("/admission",StudentRouter)
+// app.use("/admission",StudentRouter)
 app.use("/result",ResultRouter)
 app.get("/",(req,res)=>{
     console.log('welcome to satyam education')
