@@ -51,6 +51,7 @@ const StudentAdmission=mongoose.Schema({
     obtain2:Number,
     obtain3:Number,
     obtain4:Number,
+    radio:String
 
 }, {
     versionKey: false,

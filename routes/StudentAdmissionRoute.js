@@ -163,6 +163,7 @@ const addData=StudentModel({
       obtain2:req.body.obtain2,
       obtain3:req.body.obtain3,
       obtain4:req.body.obtain4,
+      radio:req.body.radio
 
 })
 
