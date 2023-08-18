@@ -11,7 +11,7 @@ const StudentRouter = express.Router()
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-      callback(null, 'uploads/');
+      callback(null, 'allphoto/');
     },
     filename: (req, file, callback) => {
         callback(null,file.originalname);
@@ -80,62 +80,62 @@ const addData=StudentModel({
       methodology2:req.body.methodology2,
       
       photo1:{
-        data:fs.readFileSync('uploads/'+img[0].filename),
+        data:fs.readFileSync('allphoto/'+img[0].filename),
         contentType:"image/png"
      
     },
       photo2: {
-        data:fs.readFileSync('uploads/'+img[1].filename),
+        data:fs.readFileSync('allphoto/'+img[1].filename),
         contentType:"image/png"
      
     },
       photo3:{
-        data:fs.readFileSync('uploads/'+img[2].filename),
+        data:fs.readFileSync('allphoto/'+img[2].filename),
         contentType:"image/png"
      
     },
       photo4: {
-        data:fs.readFileSync('uploads/'+img[3].filename),
+        data:fs.readFileSync('allphoto/'+img[3].filename),
         contentType:"image/png"
      
     },
       photo5: {
-        data:fs.readFileSync('uploads/'+img[4].filename),
+        data:fs.readFileSync('allphoto/'+img[4].filename),
         contentType:"image/png"
      
     },
       photo6: {
-        data:fs.readFileSync('uploads/'+img[5].filename),
+        data:fs.readFileSync('allphoto/'+img[5].filename),
         contentType:"image/png"
      
     },
       photo7: {
-        data:fs.readFileSync('uploads/'+img[6].filename),
+        data:fs.readFileSync('allphoto/'+img[6].filename),
         contentType:"image/png"
      
     },
       photo8: {
-        data:fs.readFileSync('uploads/'+img[7].filename),
+        data:fs.readFileSync('allphoto/'+img[7].filename),
         contentType:"image/png"
      
     },
       photo9: {
-        data:fs.readFileSync('uploads/'+img[8].filename),
+        data:fs.readFileSync('allphoto/'+img[8].filename),
         contentType:"image/png"
      
     },
       photo10: {
-        data:fs.readFileSync('uploads/'+img[9].filename),
+        data:fs.readFileSync('allphoto/'+img[9].filename),
         contentType:"image/png"
      
     },
       photo11: {
-        data:fs.readFileSync('uploads/'+img[10].filename),
+        data:fs.readFileSync('allphoto/'+img[10].filename),
         contentType:"image/png"
      
     },
       photo12: {
-        data:fs.readFileSync('uploads/'+img[11]?.filename),
+        data:fs.readFileSync('allphoto/'+img[11]?.filename),
         contentType:"image/png"
      
     },
