@@ -24,46 +24,48 @@ app.get("/",(req,res)=>{
 
 
 
-// ------Start Demo Code------
+// // ------Start Demo Code------
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, "uploads");
-    },
-    filename: (req, file, cb) => {
-      cb(null, file.originalname);
-    },
-  });
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       cb(null, "uploads");
+//     },
+//     filename: (req, file, cb) => {
+//       cb(null, file.originalname);
+//     },
+//   });
   
-  const upload = multer({ storage: storage });
+//   const upload = multer({ storage: storage });
   
-  app.post("/image", upload.single("testimag"), (req, res) => {
-    const saveImage =  ImageModel({
-      name: req.body.name,
-      img: {
-        data: fs.readFileSync("uploads/" + req.file.filename),
-        contentType: "image/png",
-      },
-    });
-    saveImage
-      .save()
-      .then((res) => {
-        console.log("image is saved");
-      })
-      .catch((err) => {
-        console.log(err, "error has occur");
-      });
-      res.send('image is saved')
-  });
+//   app.post("/image", upload.single("testimag"), (req, res) => {
+//     const saveImage =  ImageModel({
+//       name: req.body.name,
+//       img: {
+//         data: fs.readFileSync("uploads/" + req.file.filename),
+//         contentType: "image/png",
+//       },
+//     });
+// console.log("sd",saveImage)
+   
+//     saveImage
+//       .save()
+//       .then((res) => {
+//         console.log("image is saved");
+//       })
+//       .catch((err) => {
+//         console.log(err, "error has occur");
+//       });
+//       res.send('image is saved')
+//   });
   
   
-  app.get('/image',async (req,res)=>{
-    const allData = await ImageModel.find()
-    res.send("allData")
-  })
+//   app.get('/image',async (req,res)=>{
+//     const allData = await ImageModel.find()
+//     res.send("allData")
+//   })
   
 
-  // --------code end here-------
+//   // --------code end here-------
 
 
 

@@ -6,7 +6,7 @@ const multer  = require('multer')
 const fs=require('fs')
 const { StudentModel } = require('../model/StudentsModel')
 const app=express()
-// const { ResultModel } = require('../model/ResultModel')
+ const { ResultModel } = require('../model/ResultModel')
 const StudentRouter = express.Router()
 
 const storage = multer.diskStorage({
@@ -66,8 +66,8 @@ const storage = multer.diskStorage({
 const addData=StudentModel({
     
     name:req.body.name,
-    father_name:req.body.fathers_name,
-    mother_name:req.body.mothers_name,
+    father_name:req.body.father_name,
+    mother_name:req.body.mother_name,
     dob:req.body.dob,
     gender:req.body.gender,
     address:req.body.address,
