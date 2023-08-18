@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
            let allData=await StudentModel.find()
            res.send(allData)
         }catch(err){
-            console.log(err)
+             console.log(err)
         }
     })
     
