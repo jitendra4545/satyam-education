@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
       callback(null, 'allphoto/');
     },
     filename: (req, file, callback) => {
-        callback(null,file.originalname);
+        callback(null,file.fieldname+"-"+Date.now()+path.extname(file.originalname));
       },
     });
 
@@ -171,7 +171,7 @@ try{
     await addData.save()
 
     res.send("Data Saved Sucessfully")
-    
+    console.log("send")
 }catch(err){
     res.send ("Couldn't save Data Successfully",(err.message))
 }
