@@ -137,10 +137,7 @@ ResultRouter.get("/", async(req, res) => {
 })
 
 ResultRouter.post("/add",upload.single("testimage"), async (req, res) => {
-    // const {image,session,roll_no,student_name,fathers_name,mothers_name
-    //     ,date_of_birth,gender,admission_in_class,course_name,
-    //     sub1,mark1,sub2,mark2,sub3,mark3,sub4,mark4,sub5,mark5,sub6,mark6,sub7,mark7,sub8,mark8}= req.body
-    // const { filename, path } = req.file;
+    
 const saveData=ResultModel({
     session:req.body.session,
     roll_no:req.body.roll_no,
